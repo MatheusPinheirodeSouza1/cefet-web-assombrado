@@ -60,6 +60,16 @@ a:active {
 
 #menu-de-navegacao ul {
   margin-bottom: 0;
+  list-style-type: none;
+}
+
+#menu-de-navegacao ul li {
+  display: inline-block;
+}
+
+#menu-de-navegacao ul li a {
+  display: inline-block;
+  padding: 10px;
 }
 
 
@@ -89,10 +99,18 @@ a:active {
   margin-left: 2.5%;
   margin-right: 2.5%;
   display: inline-block;
+  position: relative;
 }
 
 #posts-principais .post .titulo {
   text-shadow: 1px 1px black;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 20px;
+  left: 6px;
+  opacity: 0;
+  padding: 6px;
+  transition: all 200ms ease;
 }
 
 #posts-principais .post img {
@@ -103,8 +121,36 @@ a:active {
   margin-bottom: .5em;
 }
 
+#posts-principais .post:hover .titulo  {
+  top: 6px;
+  opacity: 1;
+}
 
+.boo {
+  opacity: 0.3;
+  width: 40px;
+  position: fixed; 
+}
 
+.boo:hover {
+  opacity: 1;
+}
+
+#primeiro-fantasma {
+  top: 500px;
+  left: 10px;
+}
+
+#segundo-fantasma {
+  top: 250px;
+  left: 500px;
+}
+
+#terceiro-fantasma {
+  top: 600px;
+  right: 100px;
+  transform: scaleX(-1);
+}
 
 /* --- Principal >> Últimas postagens --- */
 #ultimas-postagens {
@@ -147,6 +193,9 @@ a:active {
   background-size: 300px;
   box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
   text-align: center;
+  box-sizing: border-box;
+  position: sticky;
+  top: -1px;
 }
 
 #tags h1 {
@@ -174,8 +223,20 @@ a:active {
   font-size: 150%;
 }
 
+span[class^="tag"]:active {
+  position: relative;
+  bottom: 2px;
+  right: 2px;
+  cursor: pointer;
+}
 
-
+.novidade::before {
+  content: "Novidade!";
+  display: inline-block;
+  background: #309d21;
+  padding: 3px;
+  border-radius: 5px;
+}
 
 
 /* --- Rodapé --- */
